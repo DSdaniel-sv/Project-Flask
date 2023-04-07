@@ -3,6 +3,7 @@ from flask_restx import Api
 from flask_sqlalchemy import SQLAlchemy
 from os import getenv
 from config import environment
+from flask_migrate import Migrate
 
 
 app = Flask(__name__)
@@ -16,3 +17,4 @@ api = Api(
 )
 
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
